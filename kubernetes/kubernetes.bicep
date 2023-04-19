@@ -66,7 +66,7 @@ resource fluxConfigGit 'Microsoft.KubernetesConfiguration/fluxConfigurations@202
 
     }
     kustomizations: {
-      staging: {
+      fleet: {
         path: 'apps'
         dependsOn: []
         timeoutInSeconds: 60
