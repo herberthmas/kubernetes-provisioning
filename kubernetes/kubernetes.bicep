@@ -56,10 +56,15 @@ resource fluxConfigGit 'Microsoft.KubernetesConfiguration/fluxConfigurations@202
     namespace: 'flux-system'
     sourceKind: sourceKind
     suspend: false
+    configurationProtectedSettings: {
+      username: 'herberthmas'
+      password: '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'
+    }
     gitRepository: {
       url: 'https://github.com/herberthmas/flux-fleet'
       timeoutInSeconds: 60
       syncIntervalInSeconds: 120
+      localAuthRef: 'gitops-auth-protected-parameters'
       repositoryRef: {
         branch: 'main'
       }
@@ -75,6 +80,7 @@ resource fluxConfigGit 'Microsoft.KubernetesConfiguration/fluxConfigurations@202
         validation: 'none'
         prune: true
       }
+      
     }
   }
 } 
