@@ -56,10 +56,6 @@ resource fluxConfigGit 'Microsoft.KubernetesConfiguration/fluxConfigurations@202
     namespace: 'flux-system'
     sourceKind: sourceKind
     suspend: false
-    configurationProtectedSettings: {
-      username: 'aGVyYmVydGhtYXM='
-      password: 'Z2hwX2JYVFNaYUtJWkhhQk9DQjNhZUVKb0xBTE9NTG5WZzBhTFk4Zg=='
-    }
     gitRepository: {
       url: 'https://github.com/herberthmas/flux-fleet'
       timeoutInSeconds: 60
@@ -68,11 +64,10 @@ resource fluxConfigGit 'Microsoft.KubernetesConfiguration/fluxConfigurations@202
       repositoryRef: {
         branch: 'main'
       }
-
     }
     kustomizations: {
       folder: {
-        path: 'apps'
+        path: 'clusters'
         dependsOn: []
         timeoutInSeconds: 60
         syncIntervalInSeconds: 120
