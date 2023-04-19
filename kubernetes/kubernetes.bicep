@@ -66,7 +66,7 @@ resource fluxConfigGit 'Microsoft.KubernetesConfiguration/fluxConfigurations@202
 
     }
     kustomizations: {
-      path: {
+      folder: {
         path: 'apps'
         dependsOn: []
         timeoutInSeconds: 60
