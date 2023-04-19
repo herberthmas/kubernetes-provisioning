@@ -1,5 +1,5 @@
 name: Run Azure Login with OIDC
-on: [pull_request]
+on: [push]
 
 permissions:
       id-token: write
