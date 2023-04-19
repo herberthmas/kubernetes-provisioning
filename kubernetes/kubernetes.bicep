@@ -64,7 +64,7 @@ resource fluxConfigGit 'Microsoft.KubernetesConfiguration/fluxConfigurations@202
       url: 'https://github.com/herberthmas/flux-fleet'
       timeoutInSeconds: 60
       syncIntervalInSeconds: 120
-      localAuthRef: 'flux-bootstrap-protected-parameters'
+      localAuthRef: 'flux-bootstrap-genkey'
       repositoryRef: {
         branch: 'main'
       }
