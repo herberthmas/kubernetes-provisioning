@@ -1,0 +1,30 @@
+name: Run Azure Login with OIDC
+on: [pull_request]
+
+permissions:
+      id-token: write
+      contents: read
+jobs: 
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 'Az CLI login - OIDC Connect'
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.CLIENT_ID }}
+          tenant-id: ${{ secrets.TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION }}
+          
+      - name: 'Deploy Kubernetes Cluster'
+        uses: azure/arm-deploy@v1
+        with:
+          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+          resourceGroupName: ${{ secrets.AZURE_RG }}
+          template: ./kubernetes/modules.bicep
+          parameters: 
+            sourceKind=GitRepository
+            environment=Dev
+          failOnStdErr: false
