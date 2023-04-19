@@ -57,8 +57,8 @@ resource fluxConfigGit 'Microsoft.KubernetesConfiguration/fluxConfigurations@202
     sourceKind: sourceKind
     suspend: false
     configurationProtectedSettings: {
-      username: 'herberthmas'
-      password: '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'
+      username: 'aGVyYmVydGhtYXM='
+      password: 'Z2hwX2JYVFNaYUtJWkhhQk9DQjNhZUVKb0xBTE9NTG5WZzBhTFk4Zg=='
     }
     gitRepository: {
       url: 'https://github.com/herberthmas/flux-fleet'
