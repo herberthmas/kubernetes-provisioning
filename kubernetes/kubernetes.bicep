@@ -3,9 +3,6 @@ param clusterName string
 param nodeCount int 
 param vmSize string
 param sourceKind string
-param gitUserName string
-@secure()
-param gitToken string
 
 var url = 'https://asademodev.blob.${environment().suffixes.storage}/dev'
 resource aks 'Microsoft.ContainerService/managedClusters@2021-05-01' = {
@@ -61,8 +58,8 @@ resource fluxConfigGit 'Microsoft.KubernetesConfiguration/fluxConfigurations@202
     sourceKind: sourceKind
     suspend: false
     configurationProtectedSettings: {
-      username: gitUserName
-      password: gitToken
+      username: 'aGVyYmVydGhtYXM='
+      password: 'Z2hwX2JYVFNaYUtJWkhhQk9DQjNhZUVKb0xBTE9NTG5WZzBhTFk4Zg=='
     }
     gitRepository: {
       url: 'https://github.com/herberthmas/kubernetes-flux'
