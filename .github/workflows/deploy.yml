@@ -27,6 +27,6 @@ jobs:
           parameters: 
             sourceKind=GitRepository
             environment=Dev
-            gitUser= ${{ secrets.GIT_USER_NAME }}
-            gitPassword= ${{ secrets.GIT_USER_PASSWORD }}
+            #gitUser= ${{ secrets.GIT_USER_NAME }}
+            #gitPassword= ${{ secrets.GIT_USER_PASSWORD }}
           failOnStdErr: false
