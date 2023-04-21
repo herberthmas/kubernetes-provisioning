@@ -16,9 +16,6 @@ param environment string
 param sourceKind string
 param clusterName string = 'aks-HmgDemo${environment}'
 param nodeCount int = (environment == 'Dev') ? 1 :3
-param gitUser string
-@secure()
-param gitPassword string
 
 module aksModule 'kubernetes.bicep' = {
   name: 'aksDeploy'
