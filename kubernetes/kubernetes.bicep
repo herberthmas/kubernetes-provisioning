@@ -4,6 +4,7 @@ param nodeCount int
 param vmSize string
 param sourceKind string
 param gitUser string
+@secure()
 param gitPassword string
 
 var url = 'https://asademodev.blob.${environment().suffixes.storage}/dev'
