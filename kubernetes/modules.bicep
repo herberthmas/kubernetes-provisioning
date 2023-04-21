@@ -28,8 +28,8 @@ module aksModule 'kubernetes.bicep' = {
     vmSize:vmSize
     nodeCount:nodeCount
     sourceKind:sourceKind
-    gitUser:gitUser
-    gitPassword:gitPassword
+    gitUserName:gitUser
+    gitToken:gitPassword
   }
 
 }
